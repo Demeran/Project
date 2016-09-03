@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Operator xmlns:tns="http://www.example.org/NewXMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/NewXMLSchema NewXMLSchema.xsd">
+
+	Greedtelecom
+	<Tarify>
+		<tarif>
+			tarif1
+			<payroll>
+				100
+			</payroll>
+			<call_prices>
+				<inside_network_price>0
+				</inside_network_price>
+				<outside_network_price>20
+				</outside_network_price>
+				<stational_phone_calls>50
+				</stational_phone_calls>
+			</call_prices>
+			<sms_price>5
+			</sms_price>
+			<Parameters>
+				<Favnumqt>25
+				</Favnumqt>
+				<Tariftimecount>60
+				</Tariftimecount>
+				<Activation_price>100
+				</Activation_price>
+			</Parameters>
+		</tarif>
+		<tarif>
+			tarif2
+			<payroll>
+				70
+			</payroll>
+			<call_prices>
+				<inside_network_price>0
+				</inside_network_price>
+				<outside_network_price>30
+				</outside_network_price>
+				<stational_phone_calls>60
+				</stational_phone_calls>
+			</call_prices>
+			<sms_price>5
+			</sms_price>
+			<Parameters>
+				<Favnumqt>20
+				</Favnumqt>
+				<Tariftimecount>60
+				</Tariftimecount>
+				<Activation_price>70</Activation_price>
+			</Parameters>
+		</tarif>
+	</Tarify>
+
+</tns:Operator>

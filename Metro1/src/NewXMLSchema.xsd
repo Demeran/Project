@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/NewXMLSchema"
+	xmlns:tns="http://www.example.org/NewXMLSchema" >
+
+
+	<element name="Operator">
+		<complexType mixed="true">
+			<sequence>
+				<element name="Tarify">
+					<complexType>
+						<sequence>
+							<element name="tarif" minOccurs="1" maxOccurs="2">
+								<complexType mixed="true">
+									<sequence>
+										<element name="payroll" type="tns:Restriction"
+											maxOccurs="1" minOccurs="0">
+										</element>
+										<element name="call_prices">
+											<complexType>
+												<sequence>
+													<element name="inside_network_price" maxOccurs="1"
+														minOccurs="0" type="tns:Restriction">
+													</element>
+													<element name="outside_network_price" maxOccurs="1"
+														minOccurs="0" type="tns:Restriction">
+													</element>
+													<element name="stational_phone_calls" maxOccurs="1"
+														minOccurs="0" type="tns:Restriction">
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+										<element name="sms_price" type="tns:Restriction"
+											maxOccurs="1" minOccurs="0">
+										</element>
+										<element name="Parameters">
+											<complexType mixed="true">
+												<sequence>
+													<element name="Favnumqt" type="tns:Restriction"
+														maxOccurs="1" minOccurs="0">
+													</element>
+													<element name="Tariftimecount" type="tns:Restriction"
+														maxOccurs="1" minOccurs="0">
+													</element>
+													<element name="Activation_price" type="tns:Restriction" maxOccurs="1" minOccurs="0">
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<simpleType name="Restriction">
+		<restriction base="int">
+			<minInclusive value="0" />
+			<maxExclusive value="1000" />
+		</restriction>
+	</simpleType>
+</schema>
