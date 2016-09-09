@@ -12,12 +12,19 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		 Station station1;
+		 Station station2;
 		 station1 = new Station();
 		 station1.passengers = new LinkedList<>();
 		 station1.platform = new LinkedList<>();
+		 station2 = new Station();
+		 station2.passengers = new LinkedList<>();
+		 station2.platform = new LinkedList<>();
 		 Escalator escalator1 = new Escalator("Escalator 1", station1);
 		 Escalator escalator2 = new Escalator("Escalator 2", station1);
 		 Escalator escalator3 = new Escalator("Escalator 3", station1);
+		 Escalator escalator4 = new Escalator("Escalator 1", station2);
+		 Escalator escalator5 = new Escalator("Escalator 2", station2);
+		 Escalator escalator6 = new Escalator("Escalator 3", station2);
 		 Thread threadOne;
 		 threadOne = new Thread(new Runnable() {
 		 public void run() {
@@ -40,19 +47,36 @@ public class Main {
 		 }
 		 });
 		
-		 Thread threadTwo;
-		 threadTwo = new Thread(escalator1);
-		
-		 Thread threadThree;
-		 threadThree = new Thread(escalator2);
-		
-		 Thread threadFour;
-		 threadFour = new Thread(escalator3);
+		 Thread threadEscalator1;								//Потоки для экскаваторов;
+		 threadEscalator1 = new Thread(escalator1);		
+		 
+		 Thread threadEscalator2;							
+		 threadEscalator2 = new Thread(escalator2);			
+		 											
+		 Thread threadEscalator3;								
+		 threadEscalator3 = new Thread(escalator3);			
+		 
+		 Thread threadEscalator4;
+		 threadEscalator4 = new Thread(escalator4);
+		 
+		 Thread threadEscalator5;
+		 threadEscalator5 = new Thread(escalator5);
+		 
+		 Thread threadEscalator6;
+		 threadEscalator6 = new Thread(escalator6);
+		 
+		 
+		 
+		 
+		 
 		
 		 threadOne.start();
-		 threadTwo.start();
-		 threadThree.start();
-		 threadFour.start();
+		 threadEscalator1.start();
+		 threadEscalator2.start();
+		 threadEscalator3.start();
+		 threadEscalator4.start();
+		 threadEscalator5.start();
+		 threadEscalator6.start();
 		 System.out.println();
 		
 		LinkedList<Wagon> wagon = new LinkedList<>();

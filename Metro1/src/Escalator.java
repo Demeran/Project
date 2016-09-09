@@ -1,14 +1,21 @@
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Escalator implements Runnable {
 
 	String name;
-	LinkedList<Passengers> escalator1;
+	LinkedList<Passengers> escalatorStack1;
 
 	Station station1;
+	Station station2;
+	Random rnd = new Random();
+	int passengerID = 1;
 
 	@Override
 	public void run() {
+		
+		
+		
 		// TODO Auto-generated method stub
 		while (true) {
 			synchronized (station1.passengers) {
@@ -21,8 +28,9 @@ public class Escalator implements Runnable {
 					}
 				}
 				Passengers passenger = station1.passengers.poll();
-				escalator1.add(passenger);
-				System.out.println("Пассажир " + passenger + " проехал по эскалатору " + this.name);
+				escalatorStack1.add(passenger);
+				
+				System.out.println("Пассажир " + passenger  + " проехал по эскалатору " + this.name);
 			}
 
 			try {
@@ -32,7 +40,7 @@ public class Escalator implements Runnable {
 				e.printStackTrace();
 
 			}
-			station1.platform.add(escalator1.poll());
+			station1.platform.add(escalatorStack1.poll());
 
 			try {
 				Thread.sleep(500);
@@ -41,13 +49,16 @@ public class Escalator implements Runnable {
 				e.printStackTrace();
 			}
 		}
+		
+
+		
 	}
 
 	public Escalator(String name, Station station1) {
 		super();
 		this.name = name;
 		this.station1 = station1;
-		escalator1 = new LinkedList<>();
+		escalatorStack1 = new LinkedList<>();
 	}
 
 }
